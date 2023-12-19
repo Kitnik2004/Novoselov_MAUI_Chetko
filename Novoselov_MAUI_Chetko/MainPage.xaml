@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Novoselov_MAUI_Chetko.MainPage"
+             xmlns:local="clr-namespace:Novoselov_MAUI_Chetko">
+    <VerticalStackLayout Padding="7">
+        <Label x:Name="header" Text="Телефонная Книга" FontSize="16" TextColor="Black" HorizontalOptions="Center"/>
+        <VerticalStackLayout HeightRequest="600" BackgroundColor="Grey" Margin="10,0,10,20">
+            <ListView x:Name="usersListView" ItemsSource="{Binding}" HeightRequest="700" RowHeight="110" ItemTapped="usersListView_ItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <StackLayout>
+                                    <HorizontalStackLayout>
+                                    <Label x:Name="NameXAML" Text="{Binding Name}" FontSize="26"/>
+                                        <Label x:Name="SurNameXAML" Text="{Binding SurName}" FontSize="26" Margin="10,0,0,0"/>
+                                    </HorizontalStackLayout>
+                                    <HorizontalStackLayout>
+                                        <Label x:Name="NumberXAML" Text="{Binding Number}" FontSize="26" WidthRequest="300" HeightRequest="50"/>
+                                    </HorizontalStackLayout>
+                                    <Label x:Name="IDXAML" Text="{Binding ID}"></Label>
+                                </StackLayout>
+                            </ViewCell.View>
+                        </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        </VerticalStackLayout>
+        <HorizontalStackLayout>
+            <Button 
+                WidthRequest="150" 
+                HeightRequest="75"
+                Margin="7"
+                Text="Создать новый"
+                Clicked="NewUserInList"
+                />
+            <Button x:Name="userDelete" IsEnabled="False" Clicked="DeleteThisUser" Text="X" FontSize="30" Margin="5,0,0,0" HeightRequest="50"/>
+            <Button 
+                WidthRequest="150" 
+                IsVisible="True"
+                HeightRequest="75"
+                Margin="7"
+                Text="Редактировать"
+                />
+        </HorizontalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>

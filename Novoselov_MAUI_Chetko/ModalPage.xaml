@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Novoselov_MAUI_Chetko.ModalPage"
+             xmlns:local="clr-namespace:Novoselov_MAUI_Chetko">
+    <StackLayout Background="AliceBlue">
+        <HorizontalStackLayout>
+            <Label WidthRequest="50" Text="Имя" VerticalOptions="CenterAndExpand" Margin="40,0,0,0"/>
+            <Entry WidthRequest="250" x:Name="NameXAML2" Text="{Binding Path=Name}"/>
+        </HorizontalStackLayout>
+        <HorizontalStackLayout>
+            <Label WidthRequest="70"  Text="Фамилия" VerticalOptions="CenterAndExpand" Margin="40,0,0,0"/>
+            <Entry WidthRequest="230" x:Name="SurNameXAML2"   Text="{Binding Path=SurName}"/>
+        </HorizontalStackLayout>
+        <HorizontalStackLayout>
+            <Label WidthRequest="50" Text="Номер " VerticalOptions="CenterAndExpand" Margin="40,0,0,0"/>
+            <Entry WidthRequest="250" x:Name="NumberXAML2" Keyboard="Numeric" Text="{Binding Path=Number}"/>
+        </HorizontalStackLayout>
+        <HorizontalStackLayout>
+            <Label WidthRequest="50" Text="Айди" VerticalOptions="CenterAndExpand" Margin="40,0,0,0"/>
+            <Entry WidthRequest="250" x:Name="IdXAML2" Keyboard="Numeric" Text="{Binding Path=ID}"/>
+        </HorizontalStackLayout>
+        <Button
+            Text="Добавить контакт"
+            Clicked="GoToMainPage"
+            />
+        
+    </StackLayout>
+</ContentPage>
